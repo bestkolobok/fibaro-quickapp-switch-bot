@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lua-local",
+      "request": "launch",
+      "name": "PLua: Debug Current File",
+      "program": {
+        "command": "plua"
+      },
+      "args": [
+        "--fibaro",
+        "${file}"
+      ],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lua-local",
+      "request": "launch",
+      "name": "PLua: Debug with run-for 60s",
+      "program": {
+        "command": "plua"
+      },
+      "args": [
+        "--fibaro",
+        "${file}",
+        "--run-for",
+        "60"
+      ],
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
