@@ -192,3 +192,8 @@ If you find this QuickApp useful:
 ⭐ **Give it a star on GitHub!** ⭐
 
 It helps others discover the project and motivates further development.
+
+## Inspired by:
+
+- [PLua - Lua Runtime with Fibaro Home Automation](https://github.com/jangabrielsson/plua)
+- [TQAE](https://github.com/jangabrielsson/TQAE)
