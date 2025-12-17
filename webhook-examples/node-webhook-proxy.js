@@ -1,15 +1,15 @@
 /**
  * SwitchBot Webhook Proxy for Fibaro HC3 (Node.js version)
- * 
+ *
  * Run this on a server accessible from internet (VPS, Raspberry Pi with port forwarding, etc.)
- * 
+ *
  * Setup:
  * 1. npm init -y
  * 2. npm install express node-fetch
  * 3. Set environment variables or edit config below
  * 4. node webhook-proxy.js
  * 5. Use http://<your-server>:3000/webhook as webhookUrl in SwitchBot QuickApp
- * 
+ *
  * For HTTPS (recommended), use nginx/caddy as reverse proxy or Let's Encrypt
  */
 
@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
 // Webhook endpoint
 app.post('/webhook', async (req, res) => {
   console.log('Received webhook:', JSON.stringify(req.body, null, 2));
-  
+
   try {
     const result = await forwardToFibaro(req.body);
     res.json({ success: true, hc3Status: result.status });
@@ -48,10 +48,10 @@ app.post('/webhook', async (req, res) => {
 
 async function forwardToFibaro(payload) {
   const url = `${config.hc3Url}/api/callAction`;
-  
+
   // Basic auth
   const auth = Buffer.from(`${config.hc3User}:${config.hc3Password}`).toString('base64');
-  
+
   const response = await fetch(url, {
     method: 'POST',
     headers: {
@@ -64,12 +64,12 @@ async function forwardToFibaro(payload) {
       args: [payload]
     })
   });
-  
+
   if (!response.ok) {
     const text = await response.text();
     throw new Error(`HC3 responded with ${response.status}: ${text}`);
   }
-  
+
   return response;
 }
 

@@ -1,14 +1,19 @@
 --%%name:SwitchBot
 --%%type:com.fibaro.genericDevice
+--%%project:423
+--%%desktop:true
+
 --%%var:profile_token="********"
 --%%var:profile_secret="********"
---%%var:dailyRequestCount="10"
---%%file:./SwitchBot_Auth.lua,Auth
---%%file:./SwitchBot_SearchDevices.lua,SearchDevices
---%%file:./SwitchBot_CreateDevices.lua,CreateDevices
---%%file:./SwitchBot_Pooling.lua,Pooling
---%%file:./SwitchBot_Http.lua,Http
---%%file:./SwitchBot_Webhook.lua,Webhook
+--%%var:dailyRequestCount="100"
+
+--%%file:src/SwitchBot_Auth.lua,Auth
+--%%file:src/SwitchBot_SearchDevices.lua,SearchDevices
+--%%file:src/SwitchBot_CreateDevices.lua,CreateDevices
+--%%file:src/SwitchBot_Pooling.lua,Pooling
+--%%file:src/SwitchBot_Http.lua,Http
+--%%file:src/SwitchBot_Webhook.lua,Webhook
+
 --%%u:{label="label_status",text="Status: Ready"}
 --%%u:{{button="button_test",text="Test Connection",visible=true,onLongPressDown="testConnection",onLongPressReleased="",onReleased="testConnection"},{button="button_search",text="Search devices",visible=true,onLongPressDown="searchDevices",onLongPressReleased="",onReleased="searchDevices"}}
 --%%u:{multi="select_devices",text="Found supported devices:",visible=true,onToggled="selectDevices",options={}}
@@ -19,6 +24,8 @@
 --%%u:{label="label_ID_7",text="________________________________________"}
 --%%u:{label="label_ID_6",text="Webhooks setup (experimental)"}
 --%%u:{{button="button_wh_setup",text="Setup",visible=true,onLongPressDown="btnSetupWebhook",onLongPressReleased="",onReleased="btnSetupWebhook"},{button="button_wh_query",text="Query",visible=true,onLongPressDown="btnQueryWebhook",onLongPressReleased="",onReleased="btnQueryWebhook"},{button="button_wh_delete",text="Delete",visible=true,onLongPressDown="btnDeleteWebhook",onLongPressReleased="",onReleased="btnDeleteWebhook"}}
+--%%u:{label="label_ID_10",text="_____________________________________"}
+--%%u:{label="label_ID_11",text="Pow by https://github.com/bestkolobok"}
 
 -- SwitchBot QuickApp for Fibaro HC3
 -- Supports: Curtain, Curtain3, Bot

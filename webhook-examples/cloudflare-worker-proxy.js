@@ -1,16 +1,16 @@
 /**
  * SwitchBot Webhook Proxy for Fibaro HC3
- * 
+ *
  * Deploy this as a Cloudflare Worker to receive webhooks from SwitchBot
  * and forward them to your Fibaro HC3.
- * 
+ *
  * Setup:
  * 1. Create account at https://workers.cloudflare.com
  * 2. Create new Worker and paste this code
  * 3. Set environment variables (Settings -> Variables):
  *    - HC3_URL: Your Fibaro HC3 URL (e.g., http://192.168.1.100)
  *    - HC3_USER: Admin username
- *    - HC3_PASSWORD: Admin password  
+ *    - HC3_PASSWORD: Admin password
  *    - QUICKAPP_ID: Your SwitchBot QuickApp device ID
  * 4. Deploy and copy the Worker URL
  * 5. Use Worker URL as webhookUrl in SwitchBot QuickApp
@@ -26,12 +26,12 @@ export default {
     try {
       // Get webhook payload from SwitchBot
       const payload = await request.json();
-      
+
       console.log('Received webhook:', JSON.stringify(payload));
 
       // Forward to Fibaro HC3
       const hc3Response = await forwardToFibaro(payload, env);
-      
+
       return new Response(JSON.stringify({
         success: true,
         hc3Status: hc3Response.status
