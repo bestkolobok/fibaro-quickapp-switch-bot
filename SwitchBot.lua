@@ -3,13 +3,12 @@
 --%%var:profile_token="********"
 --%%var:profile_secret="********"
 --%%var:dailyRequestCount="10"
---%%project:409
---%%file:./SwitchBot_409_Auth.lua,Auth
---%%file:./SwitchBot_409_SearchDevices.lua,SearchDevices
---%%file:./SwitchBot_409_CreateDevices.lua,CreateDevices
---%%file:./SwitchBot_409_Pooling.lua,Pooling
---%%file:./SwitchBot_409_Http.lua,Http
---%%file:./SwitchBot_409_Webhook.lua,Webhook
+--%%file:./SwitchBot_Auth.lua,Auth
+--%%file:./SwitchBot_SearchDevices.lua,SearchDevices
+--%%file:./SwitchBot_CreateDevices.lua,CreateDevices
+--%%file:./SwitchBot_Pooling.lua,Pooling
+--%%file:./SwitchBot_Http.lua,Http
+--%%file:./SwitchBot_Webhook.lua,Webhook
 --%%u:{label="label_status",text="Status: Ready"}
 --%%u:{{button="button_test",text="Test Connection",visible=true,onLongPressDown="testConnection",onLongPressReleased="",onReleased="testConnection"},{button="button_search",text="Search devices",visible=true,onLongPressDown="searchDevices",onLongPressReleased="",onReleased="searchDevices"}}
 --%%u:{multi="select_devices",text="Found supported devices:",visible=true,onToggled="selectDevices",options={}}
@@ -18,7 +17,7 @@
 --%%u:{label="label_ID_8",text="Manually forcing pooling"}
 --%%u:{button="button_refresh",text="Refresh All",visible=true,onLongPressDown="refreshDevices",onLongPressReleased="",onReleased="refreshDevices"}
 --%%u:{label="label_ID_7",text="________________________________________"}
---%%u:{label="label_ID_6",text="Wewbhooks setup (experimental)"}
+--%%u:{label="label_ID_6",text="Webhooks setup (experimental)"}
 --%%u:{{button="button_wh_setup",text="Setup",visible=true,onLongPressDown="btnSetupWebhook",onLongPressReleased="",onReleased="btnSetupWebhook"},{button="button_wh_query",text="Query",visible=true,onLongPressDown="btnQueryWebhook",onLongPressReleased="",onReleased="btnQueryWebhook"},{button="button_wh_delete",text="Delete",visible=true,onLongPressDown="btnDeleteWebhook",onLongPressReleased="",onReleased="btnDeleteWebhook"}}
 
 -- SwitchBot QuickApp for Fibaro HC3
